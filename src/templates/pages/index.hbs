@@ -1,0 +1,35 @@
+---
+title: Assemble Boilerplate for Theme dev
+layout: default
+content:
+  components:
+    - type: multicolumns
+      data:
+        columns:
+          - colWidth: 6
+            components:
+              - type: heading
+                data:
+                  content: 'Heading Component 1'
+              - type: list
+                data:
+                  content:
+                    - List item 1
+                    - List item 2
+                    - List item 3
+          - colWidth: 6
+            components:
+              - type: heading
+                data:
+                  content: 'Heading Component 2'
+              - type: list
+                data:
+                  content:
+                    - List item 1
+                    - List item 2
+                    - List item 3
+---
+
+{{#each content.components}}
+  {{> (lookup . 'type' ) data}}
+{{/each}}

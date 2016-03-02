@@ -1,0 +1,21 @@
+{
+  "name": "assemble-rapid-prototype-boilerplate",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "assemble": "^0.9.1",
+    "handlebars-helpers": "git://github.com/assemble/handlebars-helpers.git#51883346d3f44974fb1fef720780b2f81e7e6198",
+    "gulp-extname": "^0.2.2",
+    "helper-markdown": "^0.2.1",
+    "map-stream": "0.0.6",
+    "vinyl-yaml-data": "^2.0.0"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

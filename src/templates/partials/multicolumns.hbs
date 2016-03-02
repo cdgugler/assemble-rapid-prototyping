@@ -1,0 +1,9 @@
+<div>
+  {{#each columns}}
+  <span class="col-{{colWidth}}">
+  {{#each components}}
+    {{> (lookup . 'type' ) data}}
+  {{/each}}
+  </span>
+  {{/each}}
+</div>
