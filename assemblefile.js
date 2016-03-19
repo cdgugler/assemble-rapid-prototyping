@@ -5,8 +5,11 @@ const assemble = require('assemble');
 const app = assemble();
 const map = require('map-stream');
 const vinylYamlData = require('vinyl-yaml-data');
-let Handlebars = require('engine-handlebars');
-require('handlebars-helpers')({ handlebars: Handlebars.Handlebars });
+const Handlebars = require('engine-handlebars');
+
+require('handlebars-helpers')({
+  handlebars: Handlebars.Handlebars
+});
 
 const sourceFiles = {
   partials: 'src/templates/partials/*.hbs',
@@ -51,12 +54,12 @@ app.task('loadJSON', function(cb) {
 });
 
 app.task('default', ['loadJSON', 'loadYAML', 'load'], function() {
-    return app.toStream('pages')
-      .on('error', console.log)
-      .pipe(app.renderFile('md'))
-      .on('error', console.log)
-      .pipe(extname())
-      .pipe(app.dest('build'));
+  return app.toStream('pages')
+    .on('error', console.log)
+    .pipe(app.renderFile('md'))
+    .on('error', console.log)
+    .pipe(extname())
+    .pipe(app.dest('build'));
 });
 
 module.exports = app;
